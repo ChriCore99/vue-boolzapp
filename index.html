@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/9ea1e289b8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <div id="app">
+        <div class="container">
+            <!-- sidebar -->
+            <div class="side-bar-contatti">
+
+              <!-- mio contatto -->
+                <div class="contatto mio">
+                  <div class="img-chat">
+                    <img src="./img/avatar_io.jpg" alt="">
+                  </div>
+                  <div class="buttons">
+                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                  </div>
+                </div>
+
+                <!-- notifiche bloccate -->
+                <div class="notifiche-bloccate">
+                  <a href="#"><i class="fa-solid fa-bell-slash" style="color: #a6d7f9;"></i></a>
+                  <div>
+                    <p><b>Rcicevi notifiche di nuovi messaggi</b></p>
+                    <p><ins><a href="#">Attiva notifiche desktop</a></ins></p>
+                  </div>
+                </div>
+
+                <!-- cerca chat -->
+                <div class="cerca-chat">
+                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a> 
+                  <input type="search" placeholder="Cerca o inizia una nuova chat"> 
+                </div>
+
+                <!-- chat amici -->
+                <ul>
+                  <li class="contatto amico" v-for="(elemento, i) in contacts">
+                    <div class="img-chat">
+                      <img v-bind:src="elemento.avatar" :alt="elemento.name">
+                    </div>
+                    <div class="text-chat">
+                      <div>
+                        <p class="nominativo"><b>{{elemento.name}}</b></p>
+                        <p class="ultimo-accesso">Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <div class="orario">16:45</div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+
+            <!-- chat aperta -->
+            <div class="chat">
+                <div class="nome-chat">
+                  <div class="chat-aperta">
+                    <div class="img-chat">
+                      <img src="./img/avatar_1.jpg" alt="">
+                    </div>
+                    <div class="info-chat">
+                      <p><b>Michele</b></p>
+                      <p>ultimo accesso alle 16:49</p>
+                    </div>
+                  </div>
+                  <div class="buttons">
+                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                  <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                  </div>
+                </div>
+
+                <!-- messaggi -->
+                <div class="visione-messaggi">
+                  <div class="container-msg" v-for="(messaggi, i) in contacts">
+                    <div class="messaggio inviato" v-for="(messaggio, i) in contacts[i].messages">
+                        <p> {{messaggio.message}} </p>
+                      <div>
+                        16:15
+                      </div>
+                    </div>
+                    <div class="messaggio ricevuto">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fuga accusantium cumque quo, eos dolor, 
+                        molestias molestiae ab odio quae eaque quos unde. Numquam doloribus ullam deleniti nisi, sint sed.
+                      </p>
+                      <div>
+                        16:23
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- barra scrivi messaggio -->
+                <div class="scrivi-testo">
+                  <i class="fa-regular fa-face-smile"></i>
+                  <div>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                  </div>
+                  <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
