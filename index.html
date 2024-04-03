@@ -65,10 +65,10 @@
                 <div class="nome-chat">
                   <div class="chat-aperta">
                     <div class="img-chat">
-                      <img src="./img/avatar_1.jpg" alt="">
+                      <img :src="contacts[chatCorrente].avatar" alt="">
                     </div>
                     <div class="info-chat">
-                      <p><b>Michele</b></p>
+                      <p><b>{{contacts[chatCorrente].name}}</b></p>
                       <p>ultimo accesso alle 16:49</p>
                     </div>
                   </div>
