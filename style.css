@@ -75,26 +75,25 @@
   }
   
   .messaggio {
-    max-width: calc(70%);
+    width: calc(70%);
     border-radius: 15px;
-    min-height: 120px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   } 
   
-  .inviato {
+  .sent {
     background-color: #DEF8C0;
     align-self: flex-end;
   }
   
-  .ricevuto {
+  .received {
     background-color: white;
   }
   
-  .inviato div, 
-  .ricevuto div {
+  .sent div, 
+  .received div {
     font-size: 12px;
     align-self: end;
     margin-bottom: -12px;

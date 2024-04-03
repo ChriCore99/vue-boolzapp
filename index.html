@@ -45,7 +45,7 @@
 
                 <!-- chat amici -->
                 <ul>
-                  <li class="contatto amico" v-for="(elemento, i) in contacts">
+                  <li class="contatto amico" v-for="(elemento, i) in contacts" @click="chatCorrente = i">
                     <div class="img-chat">
                       <img v-bind:src="elemento.avatar" :alt="elemento.name">
                     </div>
@@ -81,20 +81,11 @@
 
                 <!-- messaggi -->
                 <div class="visione-messaggi">
-                  <div class="container-msg" v-for="(messaggi, i) in contacts">
-                    <div class="messaggio inviato" v-for="(messaggio, i) in contacts[i].messages">
+                  <div class="container-msg">
+                    <div class="messaggio" :class="messaggio.status" v-for="(messaggio, i) in contacts[chatCorrente].messages">
                         <p> {{messaggio.message}} </p>
                       <div>
                         16:15
-                      </div>
-                    </div>
-                    <div class="messaggio ricevuto">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fuga accusantium cumque quo, eos dolor, 
-                        molestias molestiae ab odio quae eaque quos unde. Numquam doloribus ullam deleniti nisi, sint sed.
-                      </p>
-                      <div>
-                        16:23
                       </div>
                     </div>
                   </div>
