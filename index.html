@@ -40,12 +40,12 @@
                 <!-- cerca chat -->
                 <div class="cerca-chat">
                   <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a> 
-                  <input type="search" placeholder="Cerca o inizia una nuova chat"> 
+                  <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="cerca"> 
                 </div>
 
                 <!-- chat amici -->
                 <ul>
-                  <li class="contatto amico" v-for="(elemento, i) in contacts" @click="chatCorrente = i">
+                  <li class="contatto amico" v-for="(elemento, i) in contacts" @click="chatCorrente = i" :class="elemento.name.toLowerCase().includes(cerca) ? '' : 'hidden'">
                     <div class="img-chat">
                       <img v-bind:src="elemento.avatar" :alt="elemento.name">
                     </div>

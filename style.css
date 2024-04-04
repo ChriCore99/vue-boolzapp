@@ -263,7 +263,10 @@
     width: 100%;
     outline: none;
   }
-  
+
+  .contatto.amico.hidden {
+    display: none;
+  }
   
   /* MEDIAQUERYS */
   @media (min-width: 576px) {

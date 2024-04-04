@@ -5,6 +5,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        cerca: '',
         chatCorrente: 0,
         nuovoMessaggio: '',
         contacts: [
@@ -203,16 +204,17 @@ const { createApp } = Vue
           }
           this.contacts[this.chatCorrente].messages.push(this.nuovoMessaggio)
           this.nuovoMessaggio = ''
+
+          setTimeout(() =>{
+            this.nuovoMessaggio = {
+              date: '12/01/2020 17:22:00',
+              message: 'ok',
+              status: 'received'
+            }
+            this.contacts[this.chatCorrente].messages.push(this.nuovoMessaggio)
+            this.nuovoMessaggio = ''
+          }, 1000)
         }
-        setTimeout(() =>{
-          this.nuovoMessaggio = {
-            date: '12/01/2020 17:22:00',
-            message: 'ok',
-            status: 'received'
-          }
-          this.contacts[this.chatCorrente].messages.push(this.nuovoMessaggio)
-          this.nuovoMessaggio = ''
-        }, 1000)
       }
     },
 
