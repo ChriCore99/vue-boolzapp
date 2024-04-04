@@ -85,7 +85,7 @@
                     <div class="messaggio" :class="messaggio.status" v-for="(messaggio, i) in contacts[chatCorrente].messages">
                         <p> {{messaggio.message}} </p>
                       <div>
-                        16:15
+                        {{ messaggio.date.slice(11,16) }}
                       </div>
                     </div>
                   </div>
@@ -95,7 +95,7 @@
                 <div class="scrivi-testo">
                   <i class="fa-regular fa-face-smile"></i>
                   <div>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="nuovoMessaggio" v-on:keyup.enter="messaggioScritto()" type="text" placeholder="Scrivi un messaggio">
                   </div>
                   <i class="fa-solid fa-microphone"></i>
                 </div>
